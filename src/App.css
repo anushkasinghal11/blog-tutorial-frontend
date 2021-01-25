@@ -41,6 +41,9 @@
 margin: 1rem;
   padding: 1rem;
 }
-.blogs {
- 
+.homescreen{
+margin:2rem;
+}
+.form-container {
+  border:2 px solid rgb(5, 5, 5);
 }
