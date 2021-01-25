@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.blog-card {
+  border:2px solid rgb(63, 63, 63);
+margin: 1rem;
+  padding: 1rem;
+}
+.blogs {
+ 
+}
