@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Form, Col, Row, Container, Button } from "react-bootstrap"
+import { Form, Col, Row, Container, Button, Modal } from "react-bootstrap"
 import axios from "axios"
 
 function BlogForm() {
@@ -18,7 +18,7 @@ function BlogForm() {
   const postBlog = async () => {
     try {
       const res = await axios.post(
-        "https: //blog-tutorial-backend.herokuapp.com/create",
+        "https://blog-tutorial-backend.herokuapp.com/api/create",
         blogPost
       )
       //After submitting form fields should be empty
@@ -31,7 +31,9 @@ function BlogForm() {
         window.alert("Blog created")
         window.location.reload(false)
       }
-    } catch (err) {}
+    } catch (err) {
+      console.log(err)
+    }
   }
   const handleSubmit = e => {
     if (
@@ -79,9 +81,11 @@ function BlogForm() {
           />
         </Form.Group>
 
-        <Button variant='dark' type='submit' onClick={handleSubmit}>
-          Submit
-        </Button>
+        <Modal.Footer>
+          <Button variant='dark' onClick={handleSubmit}>
+            Create a Blog
+          </Button>
+        </Modal.Footer>
       </Form>
     </div>
   )
